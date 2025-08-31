@@ -1,127 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fit with Rahul</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-    }
-    header {
-      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 20px;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-    .btn {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin: 10px;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-trial {
-      background: #28a745;
-      color: white;
-    }
-    .btn-whatsapp {
-      background: #25d366;
-      color: white;
-    }
-    .btn-membership {
-      background: #007bff;
-      color: white;
-      font-size: 1.2rem;
-      padding: 15px 35px;
-    }
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    section p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    .benefits {
-      text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
-      font-size: 1.1rem;
-    }
-    .benefits li {
-      margin-bottom: 10px;
-    }
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    footer a {
-      color: #25d366;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
+<!-- Slider Section -->
+<div class="slider">
+  <div class="slides">
+    <!-- Slide 1 -->
+    <div class="slide">
+      <img src="boy_workout.jpg" alt="Boy Working Out">
+    </div>
+    <!-- Slide 2 -->
+    <div class="slide">
+      <img src="girl_workout.jpg" alt="Girl Working Out">
+    </div>
+    <!-- Slide 3 -->
+    <div class="slide">
+      <img src="couple_workout.jpg" alt="Couple Working Out">
+    </div>
+  </div>
+</div>
 
-  <header>
-    <h1>Start Your Fitness Journey with Rahul</h1>
-    <p>First test me in the Free Trial. Upgrade anytime to full Membership (₹499/month).</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Join Free Trial</a>
-    <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" class="btn btn-whatsapp">Join WhatsApp Group</a>
-  </header>
-
-  <section>
-    <h2>Free Trial</h2>
-    <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Start Free Trial</a>
-  </section>
-
-  <section style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
-    <h2>Upgrade Anytime – Just ₹499/month</h2>
-    <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
-    <ul class="benefits">
-      <li>✅ Customized Diet Plan</li>
-      <li>✅ Personalized Workout Plan</li>
-      <li>✅ 1-on-1 Support on WhatsApp</li>
-      <li>✅ Weekly Progress Tracking</li>
-    </ul>
-    <a href="#" class="btn btn-membership">Upgrade to Membership</a>
-  </section>
-
-  <footer>
-    <p>Questions? Message me directly on <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS">WhatsApp</a></p>
-  </footer>
-
-</body>
-</html>
+<style>
+.slider {
+  width: 100%;
+  max-height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+.slides {
+  display: flex;
+  width: 300%;
+  animation: slide 9s infinite;
+}
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+}
+.slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+</style>
