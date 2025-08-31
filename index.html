@@ -7,108 +7,110 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f5f5f5;
       color: #333;
     }
     header {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1571019613914-85f342c1d0af?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-      background-size: cover;
-      background-position: center;
-      color: #f5f5f5;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url("https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=1600&q=80")
+        center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
       text-align: center;
-      padding: 100px 20px;
     }
     header h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+      font-size: 3rem;
       color: gold;
     }
     header p {
-      font-size: 1.2em;
-      margin-bottom: 30px;
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
-    .btn {
-      background-color: gold;
-      color: #333;
+    header a {
+      display: inline-block;
+      margin-top: 20px;
       padding: 12px 25px;
-      text-decoration: none;
-      border-radius: 30px;
+      background: gold;
+      color: #000;
       font-weight: bold;
-      transition: background 0.3s;
+      text-decoration: none;
+      border-radius: 25px;
+      transition: 0.3s;
     }
-    .btn:hover {
-      background-color: #d4af37;
+    header a:hover {
+      background: #333;
+      color: #fff;
     }
     section {
       padding: 60px 20px;
-      max-width: 900px;
+      max-width: 1000px;
       margin: auto;
     }
-    section h2 {
+    h2 {
       text-align: center;
       margin-bottom: 30px;
+      color: #444;
+    }
+    .pricing {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .pricing h3 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
       color: #555;
     }
-    section p, section li {
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li::before {
-      content: "✅ ";
+    .pricing p {
+      font-size: 1rem;
+      margin: 8px 0;
     }
     footer {
       text-align: center;
-      background-color: #333;
-      color: #f5f5f5;
       padding: 20px;
-    }
-    footer a {
-      color: gold;
-      text-decoration: none;
+      background: #333;
+      color: #ccc;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Start Your Fitness Journey</h1>
-    <p>Join my 7-Day Free Trial. Learn the basics, build trust, and continue with my ₹499/month coaching plan.</p>
-    <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" class="btn">Join Free Trial on WhatsApp</a>
+    <div>
+      <h1>Fit with Rahul</h1>
+      <p>Start your fitness journey with easy workouts and simple diets</p>
+      <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" target="_blank">Join Free 7-Day Trial</a>
+    </div>
   </header>
 
   <section>
     <h2>About Me</h2>
-    <p>I’m Rahul, a former gym trainer helping beginners start their fitness journey with easy workouts and simple diet plans. My goal is to make fitness simple, affordable, and effective for everyone.</p>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      I’m Rahul, a former gym trainer helping beginners start their fitness journey with simple diet plans and easy-to-follow workouts. 
+      I provide trusted, beginner-friendly guidance so you can build muscle and confidence without confusion.
+    </p>
   </section>
 
-  <section>
-    <h2>How It Works</h2>
-    <ul>
-      <li>Join the 7-day free challenge on WhatsApp</li>
-      <li>Get daily workouts and simple diet tips</li>
-      <li>After 7 days, continue with the full coaching plan</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Upgrade to Full Plan – ₹499/Month</h2>
-    <ul>
-      <li>Custom Diet Plan</li>
-      <li>Custom Workout Plan</li>
-      <li>Personal WhatsApp Support</li>
-      <li>Beginner-Friendly Education</li>
-    </ul>
-    <div style="text-align:center; margin-top:20px;">
-      <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" class="btn">Upgrade After Trial</a>
-    </div>
+  <section class="pricing">
+    <h2>Membership Plan</h2>
+    <h3>₹499 / Month</h3>
+    <p>✅ Personalized Workout Plan</p>
+    <p>✅ Simple Diet Plan</p>
+    <p>✅ Beginner-Friendly Guidance</p>
+    <p>✅ WhatsApp Support</p>
+    <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" target="_blank" style="background:grey; color:#fff;">Get Started</a>
   </section>
 
   <footer>
-    <p>© 2025 Fit with Rahul | <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS">Join on WhatsApp</a></p>
+    © 2025 Fit with Rahul | All Rights Reserved
   </footer>
+
 </body>
 </html>
