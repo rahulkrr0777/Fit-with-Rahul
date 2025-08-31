@@ -1,147 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fit with Rahul Slider</title>
-<style>
-  body { margin: 0; font-family: Arial, sans-serif; background:#f5f5f5; }
-
-  .slider-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto;
-    position: relative;
-    overflow: hidden;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    background: #000;
-  }
-
-  .slides {
-    display: flex;
-    transition: transform 0.6s ease-in-out;
-  }
-
-  .slide {
-    min-width: 100%;
-    position: relative;
-  }
-
-  .slide img {
-    width: 100%;
-    display: block;
-    vertical-align: middle;
-  }
-
-  /* Arrows */
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 40px;
-    color: #fff;
-    background: rgba(0,0,0,0.3);
-    padding: 5px 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10;
-  }
-  .arrow:hover { background: rgba(0,0,0,0.6); }
-  .prev { left: 15px; }
-  .next { right: 15px; }
-
-  /* Dots */
-  .dots {
-    text-align: center;
-    position: absolute;
-    bottom: 15px;
-    width: 100%;
-  }
-  .dot {
-    display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin: 0 6px;
-    background: rgba(255,255,255,0.5);
-    border-radius: 50%;
-    cursor: pointer;
-  }
-  .dot.active { background: #fff; }
-
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit with Rahul</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      color: #333;
+    }
+    header {
+      background: url('https://images.unsplash.com/photo-1594737625785-47a6930bb1e8') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+    .btn {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 10px;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-trial {
+      background: #28a745;
+      color: white;
+    }
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+    }
+    .btn-membership {
+      background: #007bff;
+      color: white;
+      font-size: 1.2rem;
+      padding: 15px 35px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .benefits {
+      text-align: left;
+      max-width: 600px;
+      margin: 20px auto;
+      font-size: 1.1rem;
+    }
+    .benefits li {
+      margin-bottom: 10px;
+    }
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    footer a {
+      color: #25d366;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
 
-<div class="slider-container">
-  <div class="slides">
-    <div class="slide">
-      <img src="Male%20workout.jpg" alt="Male Working Out">
-    </div>
-    <div class="slide">
-      <img src="Female%20workout.jpg" alt="Female Working Out">
-    </div>
-    <div class="slide">
-      <img src="Couple%20workout.jpg" alt="Couple Working Out">
-    </div>
-  </div>
+  <header>
+    <h1>Start Your Fitness Journey with Rahul</h1>
+    <p>First test me in the Free Trial. Upgrade anytime to full Membership (₹499/month).</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Join Free Trial</a>
+    <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" class="btn btn-whatsapp">Join WhatsApp Group</a>
+  </header>
 
-  <!-- Arrows -->
-  <div class="arrow prev">&#10094;</div>
-  <div class="arrow next">&#10095;</div>
+  <section>
+    <h2>Free Trial</h2>
+    <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Start Free Trial</a>
+  </section>
 
-  <!-- Dots -->
-  <div class="dots">
-    <span class="dot active"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
-</div>
+  <section style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
+    <h2>Upgrade Anytime – Just ₹499/month</h2>
+    <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
+    <ul class="benefits">
+      <li>✅ Customized Diet Plan</li>
+      <li>✅ Personalized Workout Plan</li>
+      <li>✅ 1-on-1 Support on WhatsApp</li>
+      <li>✅ Weekly Progress Tracking</li>
+    </ul>
+    <a href="#" class="btn btn-membership">Upgrade to Membership</a>
+  </section>
 
-<script>
-const slides = document.querySelectorAll('.slide');
-const slidesContainer = document.querySelector('.slides');
-const prevBtn = document.querySelector('.prev');
-const nextBtn = document.querySelector('.next');
-const dots = document.querySelectorAll('.dot');
-
-let currentIndex = 0;
-const totalSlides = slides.length;
-
-function updateSlider(index) {
-  slidesContainer.style.transform = `translateX(${-index * 100}%)`;
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[index].classList.add('active');
-}
-
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  updateSlider(currentIndex);
-}
-
-function prevSlide() {
-  currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-  updateSlider(currentIndex);
-}
-
-nextBtn.addEventListener('click', nextSlide);
-prevBtn.addEventListener('click', prevSlide);
-
-dots.forEach((dot, i) => {
-  dot.addEventListener('click', () => {
-    currentIndex = i;
-    updateSlider(currentIndex);
-  });
-});
-
-// Auto-slide every 4 seconds
-let slideInterval = setInterval(nextSlide, 4000);
-
-// Pause on hover
-document.querySelector('.slider-container').addEventListener('mouseenter', () => clearInterval(slideInterval));
-document.querySelector('.slider-container').addEventListener('mouseleave', () => slideInterval = setInterval(nextSlide, 4000));
-</script>
+  <footer>
+    <p>Questions? Message me directly on <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS">WhatsApp</a></p>
+  </footer>
 
 </body>
 </html>
