@@ -1,58 +1,47 @@
-<!-- Slider Section -->
-<div class="slider-container">
-  <div class="slider">
-    <div class="slide">
-      <img src="boy_workout.jpg" alt="Boy Working Out">
-    </div>
-    <div class="slide">
-      <img src="girl_workout.jpg" alt="Girl Working Out">
-    </div>
-    <div class="slide">
-      <img src="couple_workout.jpg" alt="Couple Working Out">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fit with Rahul</title>
+  <style>
+    /* Add your CSS styles here */
+  </style>
+</head>
+<body>
+
+  <!-- Slider Section -->
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide">
+        <img src="boy.jpg" alt="Boy Working Out">
+      </div>
+      <div class="slide">
+        <img src="girl.jpg" alt="Girl Working Out">
+      </div>
+      <div class="slide">
+        <img src="couple.jpg" alt="Couple Working Out">
+      </div>
     </div>
   </div>
-</div>
 
-<style>
-  .slider-container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    overflow: hidden;
-  }
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
 
-  .slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-  }
+    function showSlide(index) {
+      const slider = document.querySelector('.slider');
+      slider.style.transform = `translateX(${-index * 100}%)`;
+    }
 
-  .slide {
-    min-width: 100%;
-    box-sizing: border-box;
-  }
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      showSlide(currentIndex);
+    }
 
-  .slide img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-</style>
+    setInterval(nextSlide, 3000); // Slide every 3 seconds
+  </script>
 
-<script>
-  let currentIndex = 0;
-  const slides = document.querySelectorAll('.slide');
-  const totalSlides = slides.length;
-
-  function showSlide(index) {
-    const slider = document.querySelector('.slider');
-    const offset = -index * 100;
-    slider.style.transform = `translateX(${offset}%)`;
-  }
-
-  function nextSlide() {
-    currentIndex = (currentIndex + 1) % totalSlides;
-    showSlide(currentIndex);
-  }
-
-  setInterval(nextSlide, 3000); // Change slide every 3 seconds
-</script>
+</body>
+</html>
