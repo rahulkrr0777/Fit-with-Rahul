@@ -1,47 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fit with Rahul</title>
-  <style>
-    /* Add your CSS styles here */
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fit with Rahul Slider</title>
+<style>
+  body { margin: 0; font-family: Arial, sans-serif; }
+  .slider-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  .slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+  .slide {
+    min-width: 100%;
+  }
+  .slide img {
+    width: 100%;
+    display: block;
+  }
+</style>
 </head>
 <body>
 
-  <!-- Slider Section -->
-  <div class="slider-container">
-    <div class="slider">
-      <div class="slide">
-        <img src="boy.jpg" alt="Boy Working Out">
-      </div>
-      <div class="slide">
-        <img src="girl.jpg" alt="Girl Working Out">
-      </div>
-      <div class="slide">
-        <img src="couple.jpg" alt="Couple Working Out">
-      </div>
+<div class="slider-container">
+  <div class="slider">
+    <div class="slide">
+      <img src="https://i.imgur.com/O8QHhYm.jpg" alt="Boy Working Out">
+    </div>
+    <div class="slide">
+      <img src="https://i.imgur.com/0kYtWlS.jpg" alt="Girl Working Out">
+    </div>
+    <div class="slide">
+      <img src="https://i.imgur.com/9fG3K7b.jpg" alt="Couple Working Out">
     </div>
   </div>
+</div>
 
-  <script>
-    let currentIndex = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
 
-    function showSlide(index) {
-      const slider = document.querySelector('.slider');
-      slider.style.transform = `translateX(${-index * 100}%)`;
-    }
+  function showSlide(index) {
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(${-index * 100}%)`;
+  }
 
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      showSlide(currentIndex);
-    }
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    showSlide(currentIndex);
+  }
 
-    setInterval(nextSlide, 3000); // Slide every 3 seconds
-  </script>
+  setInterval(nextSlide, 3000);
+</script>
 
 </body>
 </html>
