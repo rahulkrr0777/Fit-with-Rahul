@@ -10,104 +10,41 @@
       margin: 0;
       padding: 0;
       background: #f8f9fa;
-      color: #333;
     }
-
-    /* ---------- HEADER ---------- */
     header {
-      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: url('https://images.pexels.com/photos/3757375/pexels-photo-3757375.jpeg') no-repeat center center/cover;
+      color: white;
       text-align: center;
-      padding: 20px;
-      position: relative;
+      padding: 100px 20px;
     }
-
-    header .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 15px;
-    }
-
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #ffcc00;
-      text-shadow: 2px 2px 5px black;
+      font-size: 2.5rem;
+      margin: 0;
+      font-weight: bold;
+      color: #FFD700;
     }
-
     header p {
+      margin: 10px 0 20px;
       font-size: 1.2rem;
-      margin-bottom: 20px;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px black;
+      color: white;
     }
-
-    .highlight {
-      background:#ffcc00; 
-      color:#000; 
-      display:inline-block; 
-      padding:10px 20px; 
-      border-radius:20px; 
-      font-weight:bold;
-    }
-
-    /* ---------- BUTTONS ---------- */
     .btn {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin: 10px;
-      text-decoration: none;
       display: inline-block;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-    }
-    .btn-trial {
+      margin: 10px;
+      padding: 10px 20px;
       background: #28a745;
       color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
     }
-    .btn-membership {
-      background: #007bff;
-      color: white;
-      font-size: 1.2rem;
-      padding: 15px 35px;
+    .btn:hover {
+      background: #218838;
     }
-
-    /* ---------- SECTIONS ---------- */
     section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
+      padding: 40px;
       text-align: center;
     }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    section p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    .benefits {
-      text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
-      font-size: 1.1rem;
-    }
-    .benefits li {
-      margin-bottom: 10px;
-    }
-
-    /* ---------- FOOTER ---------- */
     footer {
       background: #222;
       color: white;
@@ -115,50 +52,42 @@
       padding: 20px;
     }
     footer a {
-      color: #25d366;
+      color: #FFD700;
       text-decoration: none;
-      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
-  <!-- ---------- HEADER ---------- -->
   <header>
-    <div class="overlay">
-      <h1>Start Your Fitness Journey with Rahul</h1>
-      <p>Transform your body, mind, and lifestyle — step by step with me.</p>
-      <p class="highlight">💪 100% Personalized Coaching | Just ₹499/month</p>
-      <br><br>
-      <a href="#plans" class="btn btn-membership">⬇️ Explore My Plans</a>
-    </div>
+    <h1>Start Your Fitness Journey with Rahul</h1>
+    <p>First test me in the Free Trial. Upgrade anytime to full Membership (₹499/month).</p>
   </header>
 
-  <!-- ---------- FREE TRIAL SECTION ---------- -->
-  <section id="trial">
+  <!-- Free Trial Section -->
+  <section id="free-trial" style="background:#f8f9fa;">
     <h2>Free Trial</h2>
-    <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial" target="_blank">Start Free Trial</a>
+    <p>
+      If you want, you can try my <strong>7-day trial</strong>.  
+      It won’t completely transform you in just one week,  
+      but it will give you <strong>discipline, structure, and a clear direction</strong> to start your journey.
+    </p>
+    <a href="YOUR_FREE_TRIAL_LINK" target="_blank" class="btn">Start Free Trial</a>
+    <p style="font-size:0.9rem; color:#28a745; margin-top:10px;">
+      No risk — it’s completely free, so you can decide if my coaching is right for you.
+    </p>
   </section>
 
-  <!-- ---------- MEMBERSHIP SECTION ---------- -->
-  <section id="plans" style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
-    <h2>Upgrade Anytime – Just ₹499/month</h2>
-    <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
-    <ul class="benefits">
-      <li>✅ Customized Diet Plan</li>
-      <li>✅ Personalized Workout Plan</li>
-      <li>✅ 1-on-1 Support on WhatsApp</li>
-      <li>✅ Weekly Progress Tracking</li>
-    </ul>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe-Do2pOhUgOXVPIqJVbGw-o0oh7irb5-dIPp92azbOeK-Rw/viewform?usp=sharing&ouid=117301791480573101534" target="_blank" class="btn btn-membership">Upgrade to Membership</a>
+  <!-- Direct Contact Section -->
+  <section id="contact" style="background:#fff;">
+    <h2>Contact Me Directly</h2>
+    <p>Have questions? Reach out anytime on WhatsApp or call me directly.</p>
+    <p><a href="tel:8210571855" class="btn">📞 Call Now</a></p>
+    <p><a href="https://wa.me/918210571855" target="_blank" class="btn">💬 Chat on WhatsApp</a></p>
   </section>
 
-  <!-- ---------- FOOTER ---------- -->
   <footer>
-    <p>📞 Call me: <a href="tel:+918210571855">8210571855</a></p>
-    <p>💬 WhatsApp me: <a href="https://wa.me/918210571855" target="_blank">Chat Now</a></p>
-    <p>Or join my <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS">WhatsApp Group</a></p>
+    <p>&copy; 2025 Fit with Rahul | Contact: <a href="tel:8210571855">8210571855</a></p>
   </footer>
 
 </body>
