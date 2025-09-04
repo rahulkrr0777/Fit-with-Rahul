@@ -45,6 +45,15 @@
       text-shadow: 1px 1px 3px black;
     }
 
+    .highlight {
+      background:#ffcc00; 
+      color:#000; 
+      display:inline-block; 
+      padding:10px 20px; 
+      border-radius:20px; 
+      font-weight:bold;
+    }
+
     /* ---------- BUTTONS ---------- */
     .btn {
       padding: 12px 25px;
@@ -63,10 +72,6 @@
     }
     .btn-trial {
       background: #28a745;
-      color: white;
-    }
-    .btn-whatsapp {
-      background: #25d366;
       color: white;
     }
     .btn-membership {
@@ -122,20 +127,22 @@
   <header>
     <div class="overlay">
       <h1>Start Your Fitness Journey with Rahul</h1>
-      <p>Test me first in Free Trial. When ready, unlock full Membership (₹499/month).</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe-Do2pOhUgOXVPIqJVbGw-o0oh7irb5-dIPp92azbOeK-Rw/viewform?usp=sharing&ouid=117301791480573101534" target="_blank" class="btn btn-membership">Upgrade to Membership</a>
+      <p>Transform your body, mind, and lifestyle — step by step with me.</p>
+      <p class="highlight">💪 100% Personalized Coaching | Just ₹499/month</p>
+      <br><br>
+      <a href="#plans" class="btn btn-membership">⬇️ Explore My Plans</a>
     </div>
   </header>
 
   <!-- ---------- FREE TRIAL SECTION ---------- -->
-  <section>
+  <section id="trial">
     <h2>Free Trial</h2>
     <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Start Free Trial</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial" target="_blank">Start Free Trial</a>
   </section>
 
   <!-- ---------- MEMBERSHIP SECTION ---------- -->
-  <section style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
+  <section id="plans" style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
     <h2>Upgrade Anytime – Just ₹499/month</h2>
     <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
     <ul class="benefits">
