@@ -12,25 +12,40 @@
       background: #f8f9fa;
       color: #333;
     }
+
+    /* ---------- HEADER ---------- */
     header {
       background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
       height: 80vh;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-align: center;
-      color: white;
       padding: 20px;
+      position: relative;
     }
+
+    header .overlay {
+      background: rgba(0, 0, 0, 0.6); /* dark overlay for visibility */
+      padding: 40px;
+      border-radius: 15px;
+    }
+
     header h1 {
       font-size: 3rem;
       margin-bottom: 10px;
+      color: #ffcc00; /* bright yellow */
+      text-shadow: 2px 2px 5px black;
     }
+
     header p {
       font-size: 1.2rem;
       margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 1px 1px 3px black;
     }
+
+    /* ---------- BUTTONS ---------- */
     .btn {
       padding: 12px 25px;
       border: none;
@@ -40,6 +55,11 @@
       margin: 10px;
       text-decoration: none;
       display: inline-block;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
     }
     .btn-trial {
       background: #28a745;
@@ -55,6 +75,8 @@
       font-size: 1.2rem;
       padding: 15px 35px;
     }
+
+    /* ---------- SECTIONS ---------- */
     section {
       padding: 60px 20px;
       max-width: 900px;
@@ -79,6 +101,8 @@
     .benefits li {
       margin-bottom: 10px;
     }
+
+    /* ---------- FOOTER ---------- */
     footer {
       background: #222;
       color: white;
@@ -94,19 +118,24 @@
 </head>
 <body>
 
+  <!-- ---------- HEADER ---------- -->
   <header>
-    <h1>Start Your Fitness Journey with Rahul</h1>
-    <p>First test me in the Free Trial. Upgrade anytime to full Membership (₹499/month).</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Join Free Trial</a>
-    <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" class="btn btn-whatsapp">Join WhatsApp Group</a>
+    <div class="overlay">
+      <h1>Start Your Fitness Journey with Rahul</h1>
+      <p>First test me in the Free Trial. Upgrade anytime to full Membership (₹499/month).</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Join Free Trial</a>
+      <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS" class="btn btn-whatsapp">Join WhatsApp Group</a>
+    </div>
   </header>
 
+  <!-- ---------- FREE TRIAL SECTION ---------- -->
   <section>
     <h2>Free Trial</h2>
     <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial">Start Free Trial</a>
   </section>
 
+  <!-- ---------- MEMBERSHIP SECTION ---------- -->
   <section style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
     <h2>Upgrade Anytime – Just ₹499/month</h2>
     <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
@@ -119,6 +148,7 @@
     <a href="#" class="btn btn-membership">Upgrade to Membership</a>
   </section>
 
+  <!-- ---------- FOOTER ---------- -->
   <footer>
     <p>📞 Call me: <a href="tel:+918210571855">8210571855</a></p>
     <p>💬 WhatsApp me: <a href="https://wa.me/918210571855" target="_blank">Chat Now</a></p>
