@@ -18,6 +18,7 @@
       color: white;
       padding: 2rem;
       text-align: center;
+      position: relative;
     }
     header h1 {
       margin: 0;
@@ -36,6 +37,25 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: 600;
+    }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      margin-top: 1rem;
+    }
+    .slide {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active {
+      opacity: 1;
+      position: relative;
     }
     section {
       padding: 2rem;
@@ -72,6 +92,19 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25D366;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 50px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+      z-index: 1000;
+    }
   </style>
 </head>
 <body>
@@ -81,7 +114,14 @@
   <p>Personalized diet & workout plans, 1-on-1 WhatsApp coaching, and weekly progress tracking.</p>
   <div class="cta-buttons">
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing">Start Free Trial</a>
-    <a href="https://wa.me/917007077777">Chat on WhatsApp</a>
+    <a href="https://wa.me/918210571855?text=Hi%20Rahul%2C%20I%20want%20to%20start%20my%20fitness%20journey!" target="_blank">Chat on WhatsApp</a>
+  </div>
+
+  <div class="slideshow-container">
+    <img class="slide" src="male1.jpg" alt="Male Workout 1">
+    <img class="slide" src="male2.jpg" alt="Male Workout 2">
+    <img class="slide" src="female1.jpg" alt="Female Workout 1">
+    <img class="slide" src="female2.jpg" alt="Female Workout 2">
   </div>
 </header>
 
@@ -125,7 +165,7 @@
 <section>
   <h2>Stay Connected</h2>
   <ul>
-    <li><a href="https://wa.me/917007077777">WhatsApp Rahul</a></li>
+    <li><a href="https://wa.me/918210571855">WhatsApp Rahul</a></li>
     <li><a href="#">Instagram (Add your handle)</a></li>
     <li><a href="mailto:rahul@fitwithrahul.com">Email Rahul</a></li>
   </ul>
@@ -134,6 +174,26 @@
 <footer>
   <p>© 2025 Fit with Rahul | Your data is safe. No spam, ever.</p>
 </footer>
+
+<a href="https://wa.me/918210571855?text=Hi%20Rahul%2C%20I%20want%20to%20start%20my%20fitness%20journey!" class="whatsapp-float" target="_blank">
+  💬 WhatsApp Rahul
+</a>
+
+<script>
+  let slides = document.querySelectorAll('.slide');
+  let index = 0;
+
+  function showSlide() {
+    slides.forEach((slide, i) => {
+      slide.classList.remove('active');
+      if (i === index) slide.classList.add('active');
+    });
+    index = (index + 1) % slides.length;
+  }
+
+  showSlide();
+  setInterval(showSlide, 3000); // Change every 3 seconds
+</script>
 
 </body>
 </html>
