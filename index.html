@@ -1,188 +1,228 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fit with Rahul</title>
+  <meta name="description" content="Free trial workout & ₹499/month plan — Fit with Rahul">
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
-    }
+    :root{--accent:#2563eb;--accent-2:#0ea5a4;--bg:#f7f9fc;--card:#ffffff;--muted:#6b7280}
+    *{box-sizing:border-box}
+    body{font-family:Inter,Segoe UI,Roboto,system-ui,-apple-system,Arial;margin:0;background:var(--bg);color:#0f172a;line-height:1.45}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
 
-    /* ---------- HEADER ---------- */
-    header {
-      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-      position: relative;
-    }
+    /* Hero Section with Slider */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-bottom:24px}
+    .hero-left{position:relative;overflow:hidden;border-radius:14px;box-shadow:0 6px 18px rgba(16,24,40,0.06);height:450px;background:#000}
+    .slides{position:relative;width:100%;height:100%}
+    .slides img{width:100%;height:100%;object-fit:contain;background:#000;position:absolute;top:0;left:0;opacity:0;transition:opacity 1s ease-in-out}
+    .slides img.active{opacity:1}
 
-    header .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 15px;
-    }
+    /* Controls */
+    .prev,.next{cursor:pointer;position:absolute;top:50%;width:auto;padding:12px;margin-top:-22px;color:white;font-weight:bold;font-size:22px;transition:0.3s;border-radius:0 3px 3px 0;user-select:none;background:rgba(0,0,0,0.4)}
+    .next{right:0;border-radius:3px 0 0 3px}
+    .prev:hover,.next:hover{background:rgba(0,0,0,0.8)}
+    .dots{position:absolute;bottom:12px;width:100%;text-align:center}
+    .dot{cursor:pointer;height:12px;width:12px;margin:0 4px;background:#bbb;border-radius:50%;display:inline-block;transition:background 0.6s ease}
+    .dot.active{background:#717171}
 
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #ffcc00;
-      text-shadow: 2px 2px 5px black;
-    }
+    .hero-card{background:var(--card);padding:26px;border-radius:14px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    .cta{display:inline-block;background:var(--accent);color:#fff;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:700}
+    .small{color:var(--muted);font-size:14px}
 
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px black;
-    }
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+    .feature{background:var(--card);padding:14px;border-radius:12px;text-align:center;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+    .plans{display:flex;gap:14px;margin:18px 0}
+    .plan{background:linear-gradient(180deg,#fff,#fbfdff);padding:18px;border-radius:12px;flex:1;border:1px solid rgba(2,6,23,0.04)}
+    .trainers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+    .trainer{background:var(--card);border-radius:10px;padding:8px;text-align:center}
+    .trainer img{width:100%;height:180px;object-fit:cover;border-radius:8px}
+    footer{margin-top:28px;padding:18px;text-align:center;color:var(--muted)}
 
-    header .tagline {
-      font-size: 1.1rem;
-      color: #ffcc00;
-      font-weight: bold;
-      margin-top: 10px;
-      text-shadow: 1px 1px 3px black;
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .trainers{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}
     }
-
-    /* ---------- BUTTONS ---------- */
-    .btn {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin: 10px;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-    }
-    .btn-trial {
-      background: #28a745;
-      color: white;
-    }
-    .btn-membership {
-      background: #007bff;
-      color: white;
-      font-size: 1.2rem;
-      padding: 15px 35px;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
-    section p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      line-height: 1.6;
-    }
-    .benefits {
-      text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
-      font-size: 1.1rem;
-    }
-    .benefits li {
-      margin-bottom: 10px;
-    }
-
-    /* ---------- FOOTER ---------- */
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
-    footer a {
-      color: #25d366;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* ---------- RESPONSIVE MOBILE STYLES ---------- */
-    @media (max-width: 768px) {
-      header {
-        height: auto;
-        padding: 40px 20px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-      header p, header .tagline {
-        font-size: 1rem;
-      }
-      .btn-membership {
-        font-size: 1rem;
-        padding: 10px 20px;
-      }
-      section {
-        padding: 40px 15px;
-      }
-      .benefits {
-        font-size: 1rem;
-        max-width: 100%;
-        padding: 0 10px;
-      }
+    @media (max-width:520px){
+      .features{grid-template-columns:1fr}
+      .trainers{grid-template-columns:1fr}
     }
   </style>
 </head>
 <body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">R</div>
+        <div>
+          <div style="font-weight:800;font-size:18px">Fit with Rahul</div>
+          <div class="small">Get stronger. Get consistent.</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#features">Why</a>
+        <a href="#plans">Plans</a>
+        <a href="#trainers">Trainers</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
 
-  <!-- ---------- HEADER ---------- -->
-  <header>
-    <div class="overlay">
-      <h1>Start Your Fitness Journey with Rahul</h1>
-      <p>Transform your body, mind, and lifestyle — step by step with me.</p>
-      <p class="tagline">✨ Fitness Coach | Science-Based Training & Nutrition</p>
-    </div>
-  </header>
+    <section class="hero">
+      <div class="hero-left">
+        <div class="slides">
+          <img src="images/male1.jpg" class="active" alt="Male 1">
+          <img src="images/male2.jpg" alt="Male 2">
+          <img src="images/female1.jpg" alt="Female 1">
+          <img src="images/female2.jpg" alt="Female 2">
+          <a class="prev">❮</a>
+          <a class="next">❯</a>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+      </div>
 
-  <!-- ---------- FREE TRIAL SECTION ---------- -->
-  <section id="trial">
-    <h2>Free Trial</h2>
-    <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial" target="_blank">Start Free Trial</a>
-  </section>
+      <div class="hero-card">
+        <h1 style="margin-top:0">Start your free trial — train with a plan that works</h1>
+        <p class="small">4-week beginner program, daily check-ins on WhatsApp, custom diet & workout for ₹499/month after the trial.</p>
+        <div style="margin-top:18px">
+          <a class="cta" href="#signup">Start Free Trial</a>
+          <a href="#plans" style="margin-left:12px;color:var(--accent);font-weight:700;text-decoration:none">Upgrade ₹499</a>
+        </div>
 
-  <!-- ---------- MEMBERSHIP SECTION ---------- -->
-  <section id="plans" style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
-    <h2>Upgrade Anytime – Just ₹499/month</h2>
-    <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
-    <ul class="benefits">
-      <li>✅ Customized Diet Plan</li>
-      <li>✅ Personalized Workout Plan</li>
-      <li>✅ 1-on-1 Support on WhatsApp</li>
-      <li>✅ Weekly Progress Tracking</li>
-    </ul>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe-Do2pOhUgOXVPIqJVbGw-o0oh7irb5-dIPp92azbOeK-Rw/viewform?usp=sharing&ouid=117301791480573101534" target="_blank" class="btn btn-membership">Upgrade to Membership</a>
-  </section>
+        <div style="margin-top:18px;display:flex;gap:12px;flex-wrap:wrap">
+          <div class="small" style="background:#eef2ff;padding:8px;border-radius:8px">20 hr fasting friendly plans</div>
+          <div class="small" style="background:#ecfeff;padding:8px;border-radius:8px">Beginner → Advanced roadmap</div>
+        </div>
 
-  <!-- ---------- FOOTER ---------- -->
-  <footer>
-    <p>📞 Call me: <a href="tel:+918210571855">8210571855</a></p>
-    <p>💬 WhatsApp me: <a href="https://wa.me/918210571855" target="_blank">Chat Now</a></p>
-    <p>Or join my <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS">WhatsApp Group</a></p>
-  </footer>
+        <div id="signup" style="margin-top:20px;background:#f8fafc;padding:12px;border-radius:10px;border:1px dashed rgba(15,23,42,0.04)">
+          <strong>Quick signup:</strong>
+          <form style="margin-top:10px;display:flex;gap:8px;flex-wrap:wrap">
+            <input placeholder="Full name" style="flex:1;padding:10px;border-radius:8px;border:1px solid #e6eef8">
+            <input placeholder="Phone/WhatsApp" style="width:180px;padding:10px;border-radius:8px;border:1px solid #e6eef8">
+            <button class="cta" type="button">Join Trial</button>
+          </form>
+          <div class="small" style="margin-top:8px">Or join WhatsApp group — <em>link in repo</em>.</div>
+        </div>
+      </div>
+    </section>
 
+    <section id="features">
+      <h2>Why join?</h2>
+      <div class="features">
+        <div class="feature">
+          <strong>Simple plans</strong>
+          <p class="small">Practical, low-cost, evidence-based.</p>
+        </div>
+        <div class="feature">
+          <strong>Daily support</strong>
+          <p class="small">Check-ins & motivation on WhatsApp.</p>
+        </div>
+        <div class="feature">
+          <strong>Progress tracking</strong>
+          <p class="small">Weekly templates and form checks.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plans">
+      <h2>Plans</h2>
+      <div class="plans">
+        <div class="plan">
+          <h3>Free Trial</h3>
+          <p class="small">7 days — sample workouts, basics, form checks.</p>
+        </div>
+        <div class="plan">
+          <h3>Monthly</h3>
+          <p class="small">₹499 / month — full access, customized plan & support.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="trainers">
+      <h2>Sample transformations / demo athletes</h2>
+      <div class="trainers">
+        <div class="trainer">
+          <img src="images/male1.jpg" alt="Male 1 - demo">
+          <div style="padding-top:8px;font-weight:700">Demo Male 1</div>
+          <div class="small">Beginner to intermediate</div>
+        </div>
+        <div class="trainer">
+          <img src="images/male2.jpg" alt="Male 2 - demo">
+          <div style="padding-top:8px;font-weight:700">Demo Male 2</div>
+          <div class="small">Strength focus</div>
+        </div>
+        <div class="trainer">
+          <img src="images/female1.jpg" alt="Female 1 - demo">
+          <div style="padding-top:8px;font-weight:700">Demo Female 1</div>
+          <div class="small">Fat loss program</div>
+        </div>
+        <div class="trainer">
+          <img src="images/female2.jpg" alt="Female 2 - demo">
+          <div style="padding-top:8px;font-weight:700">Demo Female 2</div>
+          <div class="small">Muscle building</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:18px">
+      <h2>Contact</h2>
+      <p class="small">For quick help: WhatsApp / Phone — put your number in the repo readme so visitors can connect. You can also link a Google Form for signups.</p>
+    </section>
+
+    <footer>
+      Built for <strong>Fit with Rahul</strong>. GitHub Pages: <a href="https://rahulkrr0777.github.io/Fit-with-Rahul/" target="_blank">rahulkrr0777.github.io/Fit-with-Rahul</a>
+    </footer>
+  </div>
+
+  <script>
+    // Smooth internal scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    })
+
+    // Slider functionality
+    const slides=document.querySelectorAll('.slides img');
+    const dots=document.querySelectorAll('.dot');
+    let current=0;
+    let slideInterval=setInterval(nextSlide,3000);
+
+    function showSlide(n){
+      slides.forEach((s,i)=>s.classList.toggle('active',i===n));
+      dots.forEach((d,i)=>d.classList.toggle('active',i===n));
+      current=n;
+    }
+
+    function nextSlide(){
+      showSlide((current+1)%slides.length);
+    }
+    function prevSlide(){
+      showSlide((current-1+slides.length)%slides.length);
+    }
+
+    document.querySelector('.next').addEventListener('click',()=>{nextSlide();resetInterval()});
+    document.querySelector('.prev').addEventListener('click',()=>{prevSlide();resetInterval()});
+    dots.forEach((dot,i)=>dot.addEventListener('click',()=>{showSlide(i);resetInterval()}));
+
+    function resetInterval(){
+      clearInterval(slideInterval);
+      slideInterval=setInterval(nextSlide,3000);
+    }
+  </script>
 </body>
 </html>
