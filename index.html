@@ -1,188 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fit with Rahul</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f8f9fa;
+      background: #f9f9f9;
       color: #333;
     }
-
-    /* ---------- HEADER ---------- */
     header {
-      background: url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b') no-repeat center center/cover;
-      height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background: #1e1e1e;
+      color: white;
+      padding: 2rem;
       text-align: center;
-      padding: 20px;
-      position: relative;
     }
-
-    header .overlay {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 15px;
-    }
-
     header h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-      color: #ffcc00;
-      text-shadow: 2px 2px 5px black;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: #ffffff;
-      text-shadow: 1px 1px 3px black;
-    }
-
-    header .tagline {
-      font-size: 1.1rem;
-      color: #ffcc00;
-      font-weight: bold;
-      margin-top: 10px;
-      text-shadow: 1px 1px 3px black;
-    }
-
-    /* ---------- BUTTONS ---------- */
-    .btn {
-      padding: 12px 25px;
-      border: none;
-      border-radius: 30px;
-      font-size: 1rem;
-      cursor: pointer;
-      margin: 10px;
-      text-decoration: none;
-      display: inline-block;
-      transition: 0.3s;
-    }
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0px 4px 15px rgba(0,0,0,0.3);
-    }
-    .btn-trial {
-      background: #28a745;
-      color: white;
-    }
-    .btn-membership {
-      background: #007bff;
-      color: white;
-      font-size: 1.2rem;
-      padding: 15px 35px;
-    }
-
-    /* ---------- SECTIONS ---------- */
-    section {
-      padding: 60px 20px;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    section h2 {
+      margin: 0;
       font-size: 2rem;
-      margin-bottom: 20px;
     }
-    section p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-      line-height: 1.6;
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
     }
-    .benefits {
+    .cta-buttons a {
+      display: inline-block;
+      margin: 1rem 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #ff5722;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    section {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li::before {
+      content: "✅ ";
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 0.8rem;
       text-align: left;
-      max-width: 600px;
-      margin: 20px auto;
-      font-size: 1.1rem;
     }
-    .benefits li {
-      margin-bottom: 10px;
-    }
-
-    /* ---------- FOOTER ---------- */
     footer {
-      background: #222;
+      background: #1e1e1e;
       color: white;
       text-align: center;
-      padding: 20px;
-    }
-    footer a {
-      color: #25d366;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* ---------- RESPONSIVE MOBILE STYLES ---------- */
-    @media (max-width: 768px) {
-      header {
-        height: auto;
-        padding: 40px 20px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-      header p, header .tagline {
-        font-size: 1rem;
-      }
-      .btn-membership {
-        font-size: 1rem;
-        padding: 10px 20px;
-      }
-      section {
-        padding: 40px 15px;
-      }
-      .benefits {
-        font-size: 1rem;
-        max-width: 100%;
-        padding: 0 10px;
-      }
+      padding: 1rem;
+      margin-top: 2rem;
     }
   </style>
 </head>
 <body>
 
-  <!-- ---------- HEADER ---------- -->
-  <header>
-    <div class="overlay">
-      <h1>Start Your Fitness Journey with Rahul</h1>
-      <p>Transform your body, mind, and lifestyle — step by step with me.</p>
-      <p class="tagline">✨ Fitness Coach | Science-Based Training & Nutrition</p>
-    </div>
-  </header>
+<header>
+  <h1>Transform Your Fitness Journey — Just ₹499/month</h1>
+  <p>Personalized diet & workout plans, 1-on-1 WhatsApp coaching, and weekly progress tracking.</p>
+  <div class="cta-buttons">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing">Start Free Trial</a>
+    <a href="https://wa.me/917007077777">Chat on WhatsApp</a>
+  </div>
+</header>
 
-  <!-- ---------- FREE TRIAL SECTION ---------- -->
-  <section id="trial">
-    <h2>Free Trial</h2>
-    <p>In the Free Trial, you’ll get a sneak peek of my coaching style, workouts, and tips. No pressure — just test me first.</p>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing&ouid=117301791480573101534" class="btn btn-trial" target="_blank">Start Free Trial</a>
-  </section>
+<section>
+  <h2>Why Fit with Rahul?</h2>
+  <ul>
+    <li>Affordable & Effective</li>
+    <li>Tailored Diet & Workout Plans</li>
+    <li>Real Accountability via WhatsApp</li>
+  </ul>
+</section>
 
-  <!-- ---------- MEMBERSHIP SECTION ---------- -->
-  <section id="plans" style="background:#eef4ff; border-radius:15px; padding:60px 20px;">
-    <h2>Upgrade Anytime – Just ₹499/month</h2>
-    <p>When you’re ready, unlock full access to personalized coaching and real results.</p>
-    <ul class="benefits">
-      <li>✅ Customized Diet Plan</li>
-      <li>✅ Personalized Workout Plan</li>
-      <li>✅ 1-on-1 Support on WhatsApp</li>
-      <li>✅ Weekly Progress Tracking</li>
-    </ul>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe-Do2pOhUgOXVPIqJVbGw-o0oh7irb5-dIPp92azbOeK-Rw/viewform?usp=sharing&ouid=117301791480573101534" target="_blank" class="btn btn-membership">Upgrade to Membership</a>
-  </section>
+<section>
+  <h2>What You Get for ₹499/month</h2>
+  <table>
+    <tr><th>Feature</th><th>Included</th></tr>
+    <tr><td>Personalized Diet Plan</td><td>✅</td></tr>
+    <tr><td>Custom Workout Plan</td><td>✅</td></tr>
+    <tr><td>WhatsApp Coaching</td><td>✅</td></tr>
+    <tr><td>Weekly Progress Tracking</td><td>✅</td></tr>
+    <tr><td>Access to Community Group</td><td>✅</td></tr>
+  </table>
+  <div class="cta-buttons">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfe-Do2pOhUgOXVPIqJVbGw-o0oh7irb5-dIPp92azbOeK-Rw/viewform?usp=sharing">Join Now</a>
+  </div>
+</section>
 
-  <!-- ---------- FOOTER ---------- -->
-  <footer>
-    <p>📞 Call me: <a href="tel:+918210571855">8210571855</a></p>
-    <p>💬 WhatsApp me: <a href="https://wa.me/918210571855" target="_blank">Chat Now</a></p>
-    <p>Or join my <a href="https://chat.whatsapp.com/J2WI6uTTwrm4gBOESUbWdS">WhatsApp Group</a></p>
-  </footer>
+<section>
+  <h2>Try Before You Commit</h2>
+  <p>Get a sample workout & diet plan, 3-day WhatsApp guidance, and access to the community group.</p>
+  <div class="cta-buttons">
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfKf72v3VSrLsSfCR6VKEHdabAKapdBEpV9eWFm2fp9ewT6Xw/viewform?usp=sharing">Claim Free Trial</a>
+  </div>
+</section>
+
+<section>
+  <h2>About Rahul</h2>
+  <p>Fitness Trainer & Startup Founder. On a mission to make personal training accessible to all. Rahul blends expert fitness knowledge with a community-first approach, using WhatsApp coaching to support real people with real lives.</p>
+</section>
+
+<section>
+  <h2>Stay Connected</h2>
+  <ul>
+    <li><a href="https://wa.me/917007077777">WhatsApp Rahul</a></li>
+    <li><a href="#">Instagram (Add your handle)</a></li>
+    <li><a href="mailto:rahul@fitwithrahul.com">Email Rahul</a></li>
+  </ul>
+</section>
+
+<footer>
+  <p>© 2025 Fit with Rahul | Your data is safe. No spam, ever.</p>
+</footer>
 
 </body>
 </html>
